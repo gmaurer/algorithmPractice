@@ -1,7 +1,7 @@
-import graph
-import queue
+from assets import graph
+from assets import queue
 
-def bfs(graph,start,target):
+def breadth_first_search(graph,start,target):
     frontier = queue.Queue()
     frontier.put(start)
     visited = {}
@@ -17,19 +17,3 @@ def bfs(graph,start,target):
             if next not in visited:
                 frontier.put(next)
                 visited[next] = True
-
-
-
-
-
-
-testGraph = graph.SimpleGraph()
-testGraph.edges = {
-'a':['b'],
-'b':['a','c','d'],
-'c':['a'],
-'d':['e','a'],
-'e':['b']
-}
-
-bfs(testGraph,'c',None)
