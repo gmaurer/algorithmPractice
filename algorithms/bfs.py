@@ -33,8 +33,4 @@ def breadth_first_search2(graph, start):
 
     return came_from
 
-def preorder_binary_breadth_first_search(root):
-    if root:
-        print(root.value)
-        preorder_binary_breadth_first_search(root.left)
-        preorder_binary_breadth_first_search(root.right)
+#def binary_breadth_first_search(node,level):

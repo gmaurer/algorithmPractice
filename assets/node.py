@@ -14,6 +14,9 @@ class Node:
         else:
             print("Left and Right Full")
 
+    def add_one_node(self, value):
+        self.value = value
+
     def create_random_node(self, height):
         #height balanced tree
         if height > 1:

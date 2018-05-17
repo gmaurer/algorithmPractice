@@ -1,5 +1,5 @@
 from assets import graph, square_grid, node
-from algorithms import bfs
+from algorithms import bfs, dfs, bst
 import pprint
 
 testGraph = graph.SimpleGraph()
@@ -18,9 +18,21 @@ g.walls = [(4,2), (4,3), (5,2), (5,3)]#, (5,4), (1,5), (2,5), (1,4), (2,4)]
 #pprint.pprint(bfs.breadth_first_search2(g, (2,2)))
 
 root = node.Node(1)
-root.create_random_node(3)
+root.create_random_node(2)
 #root.add_node(root,2)
 #root.add_node(root.left,3)
 #root.add_node(root,4)
 #root.add_node(root.left,7)
-bfs.preorder_binary_breadth_first_search(root)
+print("pre: ")
+dfs.preorder_binary_breadth_first_search(root)
+print()
+print("post: ")
+dfs.postorder_binary_breadth_first_search(root)
+print()
+print("in: ")
+dfs.inorder_binary_breadth_first_search(root)
+
+print()
+root1 = bst.binary_search_tree("52351")
+dfs.inorder_binary_breadth_first_search(root1)
+print()
