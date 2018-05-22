@@ -1,5 +1,5 @@
 from assets import graph, square_grid, node
-from algorithms import bfs, dfs, bst
+from structures import bfs, dfs, bst, singlely_linked_list
 import pprint
 
 testGraph = graph.SimpleGraph()
@@ -36,3 +36,18 @@ print()
 root1 = bst.binary_search_tree("52351")
 dfs.inorder_binary_breadth_first_search(root1)
 print()
+
+
+
+print("Linked List")
+lList = singlely_linked_list.LinkedList()
+lList.append(4)
+lList.append(1)
+lList.append(7)
+lList.append(10)
+lList.push_to_front(2)
+lList.print_list()
+print("reverse")
+lList.reverse_list()
+#lList.insert_after(7,3)
+lList.print_list()

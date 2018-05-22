@@ -25,3 +25,9 @@ class Node:
 
             self.right = Node(random.randint(1,99))
             self.right.create_random_node(height - 1)
+
+
+class LLNode:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
