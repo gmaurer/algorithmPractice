@@ -1,5 +1,5 @@
 from assets import graph, square_grid, node
-from structures import bfs, dfs, bst, singlely_linked_list
+from structures import bfs, dfs, bst, singlely_linked_list, doubly_linked_list
 import pprint
 
 testGraph = graph.SimpleGraph()
@@ -24,19 +24,18 @@ root.create_random_node(2)
 #root.add_node(root,4)
 #root.add_node(root.left,7)
 print("pre: ")
-dfs.preorder_binary_breadth_first_search(root)
+dfs.preorder_binary_depth_first_search(root)
 print()
 print("post: ")
-dfs.postorder_binary_breadth_first_search(root)
+dfs.postorder_binary_depth_first_search(root)
 print()
 print("in: ")
-dfs.inorder_binary_breadth_first_search(root)
+dfs.inorder_binary_depth_first_search(root)
 
 print()
 root1 = bst.binary_search_tree("52351")
-dfs.inorder_binary_breadth_first_search(root1)
+dfs.inorder_binary_depth_first_search(root1)
 print()
-
 
 
 print("Linked List")
@@ -44,10 +43,19 @@ lList = singlely_linked_list.LinkedList()
 lList.append(4)
 lList.append(1)
 lList.append(7)
+lList.reverse_list1()
+lList.print_list()
 lList.append(10)
 lList.push_to_front(2)
-lList.print_list()
 print("reverse")
-lList.reverse_list()
-#lList.insert_after(7,3)
+lList.reverse_list1()
+lList.insert_after(lList.head.next.next,3)  #this needs to be changed
 lList.print_list()
+
+print("Doubly Linked List")
+dLList = doubly_linked_list.LinkedList()
+dLList.append_rear(4)
+dLList.append_rear(1)
+dLList.append_rear(7)
+dLList.append_rear(10)
+dLList.print_list()

@@ -36,19 +36,22 @@ class LinkedList:
             print(temp.data)
             temp = temp.next
 
-    def reverse_list(self):
-        if self.head is None:
-            print("Empty LL")
+    def reverse_list(self):     #Could use self.head as the third pointer
+        if not self.head or not self.head.next:
             return
 
-        if self.head.next is None:
-            print(self.head.data, "1 Node")
+        if self.head.next.next is None:
+            temp = self.head.next
+            self.head.next = None
+            temp.next = self.head
+            self.head = temp
             return
+
         curr_prev = self.head
         curr = curr_prev.next
         curr_next = curr.next
         curr_prev.next = None
-        
+
         while(curr_next):
             curr.next = curr_prev
             curr_prev = curr
@@ -56,3 +59,27 @@ class LinkedList:
             curr_next = curr.next
         curr.next = curr_prev
         self.head = curr
+
+    def reverse_list1(self):     #Could use self.head as the third pointer
+
+        if not self.head or not self.head.next:
+            return
+
+        if self.head.next.next is None:
+            temp = self.head.next
+            self.head.next = None
+            temp.next = self.head
+            self.head = temp
+            return
+
+        prev = self.head.next
+        curr = prev.next
+        self.head.next = None
+        while(curr):
+            prev.next = self.head
+            self.head = prev
+            prev = curr
+            curr = curr.next
+
+        prev.next = self.head
+        self.head = prev
