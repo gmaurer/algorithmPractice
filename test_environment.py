@@ -1,5 +1,6 @@
 from assets import graph, square_grid, node
 from structures import bfs, dfs, bst, singlely_linked_list, doubly_linked_list
+from sortings import bubble, insertion
 import pprint
 
 testGraph = graph.SimpleGraph()
@@ -59,3 +60,6 @@ dLList.append_rear(1)
 dLList.append_rear(7)
 dLList.append_rear(10)
 dLList.print_list()
+
+print(bubble.bubble_sort([5,3,2,4,2]))
+print(insertion.insertion_sort([4,2,3,4,1]))
